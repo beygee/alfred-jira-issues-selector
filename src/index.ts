@@ -1,6 +1,7 @@
 import './dotenv'
 import alfy, { ScriptFilterItem } from 'alfy'
 import { findIssues } from './lib/jira'
+import { uniqBy } from 'lodash'
 
 const fetchWithCache = async (query: string) => {
   const cachedItems = alfy.cache.get<string, ScriptFilterItem[]>(query)
@@ -11,10 +12,10 @@ const fetchWithCache = async (query: string) => {
   const items = issues.map<ScriptFilterItem>((issue) => ({
     title: issue.key,
     subtitle: issue.summary,
-    arg: issue.url,
+    arg: issue.key,
   }))
 
-  alfy.cache.set(query, items, { maxAge: 1000 * 60 * 60 })
+  alfy.cache.set(query, items, { maxAge: 1000 * 5 })
 
   return items
 }
@@ -22,7 +23,13 @@ const fetchWithCache = async (query: string) => {
 const start = async () => {
   const query = alfy.input
   const items = await fetchWithCache(query)
-  alfy.output(items)
+
+  const [keys, titles] = [
+    alfy.inputMatches(items, 'title'),
+    alfy.inputMatches(items, 'subtitle'),
+  ]
+
+  alfy.output(uniqBy([...keys, ...titles], 'title'))
 }
 
 start()

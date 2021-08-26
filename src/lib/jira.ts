@@ -19,12 +19,12 @@ const isNumeric = (data: string) => {
 const createJql = (query: string) => {
   return {
     expand: ['names', 'schema', 'operations'],
-    jql: PROJECT
-      ? `project = ${PROJECT} AND text ~ "${query}" order by created desc`
-      : `text ~ "${query}" order by created desc`,
-    maxResults: 20,
+    // jql: PROJECT
+    //   ? `project = ${PROJECT} AND text ~ "${query}" order by created desc`
+    //   : `text ~ "${query}" order by created desc`,
+    maxResults: 50,
     fieldsByKeys: false,
-    fields: ['summary', 'status', 'assignee'],
+    fields: ['summary'],
     startAt: 0,
   }
 }
@@ -58,7 +58,7 @@ export const findIssues = async (query: string) => {
 
 const findIssuesWithQuery = async (query: string) => {
   try {
-    const { data } = await axios({
+    const { data, request } = await axios({
       url: `https://${DOMAIN}/rest/api/3/search`,
       method: 'POST',
       data: createJql(query),
@@ -73,6 +73,7 @@ const findIssuesWithQuery = async (query: string) => {
 
     return data.issues as JiraIssueWithQuery[]
   } catch (e) {
+    console.error(e)
     return []
   }
 }

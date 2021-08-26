@@ -22,7 +22,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>D24EA662-8BD1-4BE3-ADD6-349FF92D0771</string>
+				<string>3E2A8DDE-C097-4216-BE76-71228CDE7C9F</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
@@ -81,11 +81,11 @@
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
 				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>Fetching the Issues ...</string>
 				<key>script</key>
@@ -113,27 +113,38 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open "https://${DOMAIN}/browse/${1}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
 				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>D24EA662-8BD1-4BE3-ADD6-349FF92D0771</string>
+			<string>3E2A8DDE-C097-4216-BE76-71228CDE7C9F</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>3E2A8DDE-C097-4216-BE76-71228CDE7C9F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>485</integer>
+		</dict>
 		<key>7EC5A51C-F751-4E66-9FA4-E342014FB162</key>
 		<dict>
 			<key>xpos</key>
@@ -147,13 +158,6 @@
 			<integer>135</integer>
 			<key>ypos</key>
 			<integer>340</integer>
-		</dict>
-		<key>D24EA662-8BD1-4BE3-ADD6-349FF92D0771</key>
-		<dict>
-			<key>xpos</key>
-			<integer>355</integer>
-			<key>ypos</key>
-			<integer>480</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
