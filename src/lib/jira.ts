@@ -73,7 +73,6 @@ const findIssuesWithQuery = async (query: string) => {
 
     return data.issues as JiraIssueWithQuery[]
   } catch (e) {
-    console.error(e)
     return []
   }
 }
@@ -98,7 +97,6 @@ const findIssuesWithKey = async (query: string) => {
 
     return data.sections[0].issues as JiraIssueWithKey[]
   } catch (e) {
-    console.error(e)
     return []
   }
 }

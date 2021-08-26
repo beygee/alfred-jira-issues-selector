@@ -3,16 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.beygee.antd.docs</string>
+	<string>com.beygee.jira.issue.selector</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>B87AC99C-6981-44F2-A525-EA48F97C37A4</key>
+		<key>A422ECFD-EA92-4AAB-8AE7-23D7EC218FE7</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>96028F52-752F-42F6-AF27-4BD218ACD0E0</string>
+				<string>7EC5A51C-F751-4E66-9FA4-E342014FB162</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D24EA662-8BD1-4BE3-ADD6-349FF92D0771</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -23,13 +35,32 @@
 	<key>createdby</key>
 	<string>beygee</string>
 	<key>description</key>
-	<string>Search Ant Design documentation</string>
+	<string>Select Jira Issue with ease</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Ant Design Docs</string>
+	<string>Jira Issue Selector</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7EC5A51C-F751-4E66-9FA4-E342014FB162</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -42,11 +73,11 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>antd</string>
+				<string>jr</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -56,7 +87,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Fetching the documentation ...</string>
+				<string>Fetching the Issues ...</string>
 				<key>script</key>
 				<string>./node_modules/.bin/run-node dist/index.js "$1"</string>
 				<key>scriptargtype</key>
@@ -64,9 +95,9 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search for any questions about Antd</string>
+				<string></string>
 				<key>title</key>
-				<string>Search Ant Design documentation</string>
+				<string>Select Jira Issue</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -75,7 +106,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>B87AC99C-6981-44F2-A525-EA48F97C37A4</string>
+			<string>A422ECFD-EA92-4AAB-8AE7-23D7EC218FE7</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -94,7 +125,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>96028F52-752F-42F6-AF27-4BD218ACD0E0</string>
+			<string>D24EA662-8BD1-4BE3-ADD6-349FF92D0771</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -103,24 +134,42 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>96028F52-752F-42F6-AF27-4BD218ACD0E0</key>
+		<key>7EC5A51C-F751-4E66-9FA4-E342014FB162</key>
 		<dict>
 			<key>xpos</key>
-			<integer>350</integer>
+			<integer>360</integer>
 			<key>ypos</key>
-			<integer>165</integer>
+			<integer>335</integer>
 		</dict>
-		<key>B87AC99C-6981-44F2-A525-EA48F97C37A4</key>
+		<key>A422ECFD-EA92-4AAB-8AE7-23D7EC218FE7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>160</integer>
+			<integer>135</integer>
 			<key>ypos</key>
-			<integer>165</integer>
+			<integer>340</integer>
+		</dict>
+		<key>D24EA662-8BD1-4BE3-ADD6-349FF92D0771</key>
+		<dict>
+			<key>xpos</key>
+			<integer>355</integer>
+			<key>ypos</key>
+			<integer>480</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>API_TOKEN</key>
+		<string></string>
+		<key>DOMAIN</key>
+		<string></string>
+		<key>PROJECT_NAME</key>
+		<string></string>
+		<key>USER_EMAIL</key>
+		<string></string>
+	</dict>
 	<key>version</key>
-	<string>0.0.14</string>
+	<string></string>
 	<key>webaddress</key>
-	<string>https://github.com/beygee/alfred-ant-design-docs</string>
+	<string>https://github.com/beygee</string>
 </dict>
 </plist>

@@ -2,10 +2,6 @@ import './dotenv'
 import alfy, { ScriptFilterItem } from 'alfy'
 import { findIssues } from './lib/jira'
 
-const alfredNotifier = require('alfred-notifier')
-
-alfredNotifier()
-
 const fetchWithCache = async (query: string) => {
   const cachedItems = alfy.cache.get<string, ScriptFilterItem[]>(query)
   if (cachedItems) return cachedItems
