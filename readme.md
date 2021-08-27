@@ -17,11 +17,9 @@ $ npm install -g alfred-jira-issues-selector
 Or
 Download workflow on this [URL](http://www.packal.org/workflow/jira-issues-selector)
 
-![4](https://user-images.githubusercontent.com/7090906/131052352-81c5dc6f-00e7-436b-9ba8-e5118f0ee2bf.png)
-
 And then You must set the variable.
 
-GET API_TOKEN on [this page.](https://id.atlassian.com/manage-profile/security/api-tokens)
+![4](https://user-images.githubusercontent.com/7090906/131052768-22f0047e-63e1-4b3c-aded-cb8a735ce590.png)
 
 ```
 API_TOKEN= jira api token.
@@ -30,7 +28,8 @@ USER_EMAIL= your jira email.
 PROJECT_NAME= (optional) your jira project key.
 ```
 
-If you write `PROJECT_NAME`, only the issues of that project are searched.
+- GET API_TOKEN on [this page.](https://id.atlassian.com/manage-profile/security/api-tokens)
+- If you write `PROJECT_NAME`, only the issues of that project are searched.
 
 ![5](https://user-images.githubusercontent.com/7090906/131052355-e673c570-3320-4f58-ba84-1a8cbb2ffdfe.png)
 
