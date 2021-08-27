@@ -19,10 +19,10 @@ const isNumeric = (data: string) => {
 const createJql = (query: string) => {
   return {
     expand: ['names', 'schema', 'operations'],
-    // jql: PROJECT
-    //   ? `project = ${PROJECT} AND text ~ "${query}" order by created desc`
-    //   : `text ~ "${query}" order by created desc`,
-    maxResults: 50,
+    jql: PROJECT
+      ? `project = ${PROJECT} AND text ~ "${query}" order by created desc`
+      : `text ~ "${query}" order by created desc`,
+    maxResults: 20,
     fieldsByKeys: false,
     fields: ['summary'],
     startAt: 0,

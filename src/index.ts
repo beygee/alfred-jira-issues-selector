@@ -22,14 +22,9 @@ const fetchWithCache = async (query: string) => {
 
 const start = async () => {
   const query = alfy.input
-  const items = await fetchWithCache(query)
+  const items = await fetchWithCache(query.normalize('NFC'))
 
-  const [keys, titles] = [
-    alfy.inputMatches(items, 'title'),
-    alfy.inputMatches(items, 'subtitle'),
-  ]
-
-  alfy.output(uniqBy([...keys, ...titles], 'title'))
+  alfy.output(items)
 }
 
 start()
