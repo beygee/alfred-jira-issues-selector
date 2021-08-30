@@ -26,6 +26,7 @@ API_TOKEN= jira api token.
 DOMAIN= your jira domain.
 USER_EMAIL= your jira email.
 PROJECT_NAME= (optional) your jira project key.
+MY_ISSUE=1 // if you search all issues, MY_ISSUE=
 ```
 
 - GET API_TOKEN on [this page.](https://id.atlassian.com/manage-profile/security/api-tokens)
@@ -34,6 +35,10 @@ PROJECT_NAME= (optional) your jira project key.
 ![5](https://user-images.githubusercontent.com/7090906/131052355-e673c570-3320-4f58-ba84-1a8cbb2ffdfe.png)
 
 ## Usage
+
+```
+jr // search all issues order by created at
+```
 
 ```
 jr [query]
