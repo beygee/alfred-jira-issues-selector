@@ -1,7 +1,8 @@
 import './dotenv'
 import alfy, { ScriptFilterItem } from 'alfy'
 import { findIssues } from './lib/jira'
-import { uniqBy } from 'lodash'
+
+const IS_LOCAL = process.env.NODE_ENV === 'local'
 
 const fetchWithCache = async (query: string) => {
   const cachedItems = alfy.cache.get<string, ScriptFilterItem[]>(query)
@@ -22,7 +23,7 @@ const fetchWithCache = async (query: string) => {
 
 const start = async () => {
   const query = alfy.input
-  const items = await fetchWithCache(query.normalize('NFC'))
+  const items = await fetchWithCache(IS_LOCAL ? '108' : query.normalize('NFC'))
 
   alfy.output(items)
 }
